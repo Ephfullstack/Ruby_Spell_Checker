@@ -10,6 +10,9 @@ describe Spell do
 
         expect(@Spell.check("Hello")).to eq "Hello"
 
-    end 
+    end
     
+    it 'contains word bank when initialised' do
+        expect(@Spell.word_bank).to be_a Array
+    end
 end
