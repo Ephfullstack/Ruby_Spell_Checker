@@ -3,7 +3,7 @@ class Spell
     attr_reader :word_bank
 
     def initialize
-        @word_bank = ["hello", "world",];
+        @word_bank = ["hello", "world", "where", "are", "the", "biscuits"];
     end
     
     def check(string)

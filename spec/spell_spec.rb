@@ -23,6 +23,10 @@ describe Spell do
         it 'contains word bank when initialised' do
             expect(@Spell.word_bank).to be_a Array
         end
+
+        it "returns highlighted incorrect words in a sentence" do 
+            expect(@Spell.check('where are the biscits')).to eq "where are the ~biscits~"
+        end
     
     end 
 
