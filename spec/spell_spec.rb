@@ -24,11 +24,18 @@ describe Spell do
             expect(@Spell.word_bank).to be_a Array
         end
     
+    end 
+
+
+    context 'edgecases' do
         it 'return word surronded by ~ if it does not match a word in word bank array' do
             expect(@Spell.check("a")).to eq '~a~'
         end 
-    end 
 
+        it "return errorif input contains anything other than a string" do
+            expect(@Spell.check(1)).to eq "invalid input"
+        end
+    end
    
 
 end

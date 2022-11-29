@@ -7,21 +7,24 @@ class Spell
     end
     
     def check(string)
+        if string.is_a? String
+            words = string.split(" ")
 
-        words = string.split(" ")
 
 
+            newWords = words.map { |word|
 
-        newWords = words.map { |word|
+                if @word_bank.include?(word.downcase)
+                        word = word
+                    else 
+                        word =  "~#{word}~"
+                end 
+            }
 
-            if @word_bank.include?(word.downcase)
-                    word = word
-                else 
-                    word =  "~#{word}~"
-            end 
-        }
-
-        return newWords.join(" ")
+            return newWords.join(" ")
+        else
+            return "invalid input"
+        end  
         
     end
 end
