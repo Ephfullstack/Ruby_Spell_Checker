@@ -3,14 +3,25 @@ class Spell
     attr_reader :word_bank
 
     def initialize
-        @word_bank = ["Hello"];
+        @word_bank = ["hello", "world",];
     end
     
     def check(string)
-        if @word_bank.include? (string)
-        return string
-        else 
-        return "~#{string}~"
-        end 
+
+        words = string.split(" ")
+
+
+
+        newWords = words.map { |word|
+
+            if @word_bank.include?(word.downcase)
+                    word = word
+                else 
+                    word =  "~#{word}~"
+            end 
+        }
+
+        return newWords.join(" ")
+        
     end
 end

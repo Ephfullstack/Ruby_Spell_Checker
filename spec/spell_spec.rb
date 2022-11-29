@@ -12,6 +12,10 @@ describe Spell do
             expect(@Spell.check("Hello")).to eq "Hello"
     
         end
+
+        it "returns words as they are if they match enteries in the word_bank" do
+            expect(@Spell.check("Hello world")).to eq "Hello world"
+        end
     end 
     
 
